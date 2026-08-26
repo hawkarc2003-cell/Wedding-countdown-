@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sofiya | The Big Day 💍</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+    color:white;
+    font-family:Poppins,sans-serif;
+
+    background:
+        radial-gradient(circle at 50% 20%, #5d1875 0%, transparent 35%),
+        radial-gradient(circle at 20% 70%, #76002f 0%, transparent 30%),
+        radial-gradient(circle at 90% 80%, #4b075f 0%, transparent 35%),
+        linear-gradient(135deg,#100019,#27002f,#170018);
+}
+
+/* -------------------------
+   BACKGROUND
+------------------------- */
+
+.background{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:0;
+}
+
+.star{
+    position:absolute;
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background:white;
+    opacity:.7;
+    animation:twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle{
+    0%,100%{
+        opacity:.2;
+        transform:scale(.7);
+    }
+    50%{
+        opacity:1;
+        transform:scale(1.4);
+    }
+}
+
+.petal{
+    position:absolute;
+    top:-40px;
+    font-size:22px;
+    color:#ff315f;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+    0%{
+        transform:translateY(-50px) rotate(0deg);
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(110vh) translateX(100px) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* -------------------------
+   MAIN
+------------------------- */
+
+.page{
+    position:relative;
+    z-index:2;
+    width:100%;
+    max-width:900px;
+    margin:auto;
+    padding:25px 18px 60px;
+    text-align:center;
+}
+
+/* -------------------------
+   TOP
+------------------------- */
+
+.top-label{
+    font-family:"Great Vibes",cursive;
+    font-size:42px;
+    color:#ffd4ed;
+    margin-top:15px;
+
+    text-shadow:
+        0 0 10px #ff52ba,
+        0 0 30px #8d2cff;
+}
+
+.crown{
+    font-size:28px;
+    margin-bottom:5px;
+}
+
+/* -------------------------
+   SOFIYA
+------------------------- */
+
+.name{
+    font-family:"Great Vibes",cursive;
+    font-size:clamp(80px,20vw,150px);
+    line-height:.9;
+
+    background:linear-gradient(
+        90deg,
+        #ffb5ed,
+        #ff4cba,
+        #ff304f
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+
+    text-shadow:
+        0 0 20px rgba(255,45,170,.5);
+
+    animation:nameGlow 3s infinite ease-in-out;
+}
+
+@keyframes nameGlow{
+
+    0%,100%{
+        filter:drop-shadow(0 0 5px #ff2eac);
+    }
+
+    50%{
+        filter:drop-shadow(0 0 25px #ff2eac);
+    }
+}
+
+.getting{
+    font-family:"Playfair Display",serif;
+    letter-spacing:4px;
+    font-size:18px;
+    margin-top:12px;
+}
+
+.ido{
+    font-family:"Great Vibes",cursive;
+    font-size:55px;
+    color:#ffb4ec;
+    margin-top:5px;
+}
+
+/* -------------------------
+   DANCE STAGE
+------------------------- */
+
+.stage{
+    position:relative;
+    width:100%;
+    max-width:650px;
+    height:470px;
+    margin:25px auto 0;
+
+    border-radius:50% 50% 20px 20px;
+
+    background:
+        radial-gradient(
+            ellipse at center bottom,
+            rgba(255,0,125,.35),
+            transparent 55%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(85,0,100,.2),
+            rgba(10,0,25,.7)
+        );
+
+    border:1px solid rgba(255,100,220,.3);
+
+    box-shadow:
+        inset 0 0 80px rgba(255,0,180,.15),
+        0 0 50px rgba(180,0,255,.2);
+
+    overflow:hidden;
+}
+
+/* moon */
+
+.moon{
+    position:absolute;
+    top:35px;
+    right:45px;
+
+    width:75px;
+    height:75px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(circle at 30% 30%,#fff,#d8b8ff);
+
+    box-shadow:
+        0 0 30px #d4a8ff;
+
+    opacity:.9;
+}
+
+/* glowing floor */
+
+.floor{
+    position:absolute;
+    bottom:25px;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:80%;
+    height:80px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(255,0,150,.5),
+            transparent 65%
+        );
+
+    box-shadow:
+        0 0 40px rgba(255,0,150,.4);
+}
+
+/* -------------------------
+   CARTOON COUPLE
+------------------------- */
+
+.couple{
+    position:absolute;
+    left:50%;
+    bottom:75px;
+
+    width:260px;
+    height:300px;
+
+    transform:translateX(-50%);
+
+    animation:dance 2.8s infinite ease-in-out;
+    transform-origin:50% 85%;
+}
+
+@keyframes dance{
+
+    0%,100%{
+        transform:translateX(-50%) rotate(-2deg);
+    }
+
+    25%{
+        transform:translateX(-50%) rotate(3deg) translateY(-4px);
+    }
+
+    50%{
+        transform:translateX(-50%) rotate(-3deg) translateY(-7px);
+    }
+
+    75%{
+        transform:translateX(-50%) rotate(3deg) translateY(-3px);
+    }
+}
+
+/* Groom */
+
+.groom{
+    position:absolute;
+    left:45px;
+    top:80px;
+    width:95px;
+    height:190px;
+}
+
+.groom-head{
+    position:absolute;
+    left:18px;
+    top:0;
+
+    width:62px;
+    height:68px;
+
+    border-radius:48%;
+
+    background:#d9946b;
+
+    box-shadow:
+        inset 8px -5px rgba(0,0,0,.08);
+}
+
+.groom-hair{
+    position:absolute;
+    left:13px;
+    top:-8px;
+
+    width:72px;
+    height:40px;
+
+    border-radius:50% 55% 25% 20%;
+
+    background:#24131c;
+
+    transform:rotate(-5deg);
+}
+
+.groom-body{
+    position:absolute;
+    left:5px;
+    top:60px;
+
+    width:85px;
+    height:125px;
+
+    border-radius:30px 30px 15px 15px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #090912 0%,
+            #262035 50%,
+            #080812 100%
+        );
+}
+
+.groom-shirt{
+    position:absolute;
+    left:35px;
+    top:62px;
+
+    width:28px;
+    height:80px;
+
+    background:#fff;
+
+    clip-path:polygon(
+        0 0,
+        100% 0,
+        80% 100%,
+        20% 100%
+    );
+}
+
+.tie{
+    position:absolute;
+    left:43px;
+    top:68px;
+
+    width:13px;
+    height:48px;
+
+    background:#c91d53;
+
+    clip-path:polygon(
+        50% 0,
+        100% 20%,
+        60% 100%,
+        0 20%
+    );
+}
+
+/* Bride */
+
+.bride{
+    position:absolute;
+    right:35px;
+    top:65px;
+
+    width:125px;
+    height:220px;
+
+    animation:brideMove 2.8s infinite ease-in-out;
+}
+
+@keyframes brideMove{
+
+    0%,100%{
+        transform:rotate(2deg);
+    }
+
+    50%{
+        transform:rotate(-4deg) translateY(-5px);
+    }
+}
+
+.bride-head{
+    position:absolute;
+    left:32px;
+    top:0;
+
+    width:65px;
+    height:70px;
+
+    border-radius:50%;
+
+    background:#d99a78;
+}
+
+.bride-hair{
+    position:absolute;
+    left:18px;
+    top:-10px;
+
+    width:92px;
+    height:120px;
+
+    border-radius:50% 50% 45% 45%;
+
+    background:#30121f;
+
+    z-index:-1;
+}
+
+.bride-dress{
+    position:absolute;
+    left:5px;
+    top:62px;
+
+    width:120px;
+    height:155px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8d124c,
+            #df215c,
+            #641047
+        );
+
+    clip-path:polygon(
+        35% 0,
+        65% 0,
+        75% 30%,
+        100% 100%,
+        0 100%,
+        25% 30%
+    );
+
+    box-shadow:
+        0 0 25px rgba(255,0,120,.4);
+}
+
+/* dancing arms */
+
+.arm-groom{
+    position:absolute;
+
+    width:90px;
+    height:14px;
+
+    background:#d9946b;
+
+    border-radius:20px;
+
+    top:105px;
+    left:70px;
+
+    transform:rotate(18deg);
+    transform-origin:left center;
+
+    z-index:5;
+
+    animation:armDance 2.8s infinite ease-in-out;
+}
+
+.arm-bride{
+    position:absolute;
+
+    width:90px;
+    height:13px;
+
+    background:#d99a78;
+
+    border-radius:20px;
+
+    top:105px;
+    left:10px;
+
+    transform:rotate(-20deg);
+    transform-origin:right center;
+
+    z-index:5;
+
+    animation:armDance2 2.8s infinite ease-in-out;
+}
+
+@keyframes armDance{
+
+    0%,100%{
+        transform:rotate(18deg);
+    }
+
+    50%{
+        transform:rotate(30deg);
+    }
+}
+
+@keyframes armDance2{
+
+    0%,100%{
+        transform:rotate(-20deg);
+    }
+
+    50%{
+        transform:rotate(-32deg);
+    }
+}
+
+/* -------------------------
+   FLOATING HEARTS AROUND COUPLE
+------------------------- */
+
+.love{
+    position:absolute;
+    color:#ff3b76;
+    font-size:24px;
+
+    animation:heartFloat 3s infinite ease-in-out;
+}
+
+@keyframes heartFloat{
+
+    0%,100%{
+        transform:translateY(10px) scale(.8);
+        opacity:.5;
+    }
+
+    50%{
+        transform:translateY(-25px) scale(1.15);
+        opacity:1;
+    }
+}
+
+/* -------------------------
+   COUNTDOWN
+------------------------- */
+
+.count-title{
+    margin-top:25px;
+
+    font-family:"Playfair Display",serif;
+    letter-spacing:2px;
+
+    font-size:18px;
+}
+
+.countdown{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+
+    max-width:650px;
+    margin:20px auto;
+}
+
+.time{
+    padding:18px 5px;
+
+    border:1px solid rgba(255,80,190,.45);
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(110,0,100,.5),
+            rgba(40,0,60,.65)
+        );
+
+    box-shadow:
+        inset 0 0 20px rgba(255,0,180,.08),
+        0 0 15px rgba(255,0,170,.1);
+}
+
+.time strong{
+    display:block;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:38px;
+
+    color:#fff;
+
+    text-shadow:
+        0 0 10px #ff52c8;
+}
+
+.time span{
+    font-size:10px;
+    letter-spacing:2px;
+    color:#ffb9e8;
+}
+
+/* -------------------------
+   DATE
+------------------------- */
+
+.date{
+    display:inline-block;
+
+    margin-top:15px;
+    padding:14px 35px;
+
+    border-radius:50px;
+
+    border:1px solid rgba(255,80,180,.5);
+
+    background:rgba(80,0,80,.35);
+
+    font-family:"Playfair Display",serif;
+
+    font-size:20px;
+
+    color:#ffd7f1;
+}
+
+/* -------------------------
+   LIKE
+------------------------- */
+
+.like-box{
+    max-width:650px;
+
+    margin:35px auto 0;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(95,0,85,.5),
+            rgba(40,0,55,.6)
+        );
+
+    border:1px solid rgba(255,80,180,.4);
+}
+
+.like-box h2{
+    font-family:"Great Vibes",cursive;
+    font-size:40px;
+    color:#ffb8ea;
+}
+
+.like-box p{
+    font-size:13px;
+    color:#e8c9e3;
+    margin:5px 0 18px;
+}
+
+.like-button{
+    border:0;
+
+    width:80px;
+    height:80px;
+
+    border-radius:50%;
+
+    font-size:38px;
+
+    color:white;
+
+    cursor:pointer;
+
+    background:
+        radial-gradient(
+            circle,
+            #ff315d,
+            #9e073e
+        );
+
+    box-shadow:
+        0 0 25px rgba(255,0,80,.7);
+
+    transition:.25s;
+}
+
+.like-button:active{
+    transform:scale(.8);
+}
+
+.like-button.liked{
+    animation:heartPop .5s ease;
+}
+
+@keyframes heartPop{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.35);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
+
+.like-count{
+    margin-top:10px;
+
+    font-family:"Playfair Display",serif;
+
+    font-size:25px;
+
+    color:#ffbddf;
+}
+
+/* -------------------------
+   WISHES
+------------------------- */
+
+.wishes{
+    max-width:650px;
+
+    margin:25px auto;
+
+    padding:22px;
+
+    border-radius:25px;
+
+    background:rgba(60,0,70,.45);
+
+    border:1px solid rgba(255,90,200,.3);
+}
+
+.wishes h2{
+    font-family:"Great Vibes",cursive;
+    font-size:35px;
+    color:#ffb8e9;
+}
+
+.wish-input{
+    width:100%;
+
+    min-height:90px;
+
+    margin-top:15px;
+
+    padding:15px;
+
+    resize:none;
+
+    border-radius:18px;
+
+    border:1px solid rgba(255,100,210,.4);
+
+    outline:none;
+
+    background:rgba(20,0,30,.6);
+
+    color:white;
+
+    font-family:Poppins,sans-serif;
+}
+
+.wish-input::placeholder{
+    color:#c99bc4;
+}
+
+.send{
+    margin-top:10px;
+
+    border:0;
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+        90deg,
+        #d81768,
+        #7c24c7
+    );
+
+    color:white;
+
+    cursor:pointer;
+
+    font-family:Poppins,sans-serif;
+}
+
+.wish-message{
+    margin-top:15px;
+
+    font-size:13px;
+
+    color:#ffbce9;
+}
+
+/* -------------------------
+   MUSIC
+------------------------- */
+
+.music{
+    position:fixed;
+
+    top:15px;
+    right:15px;
+
+    z-index:20;
+
+    padding:11px 16px;
+
+    border-radius:30px;
+
+    border:1px solid rgba(255,100,220,.5);
+
+    background:rgba(40,0,50,.7);
+
+    color:white;
+
+    cursor:pointer;
+
+    backdrop-filter:blur(10px);
+}
+
+/* -------------------------
+   FOOTER
+------------------------- */
+
+.footer{
+    margin-top:40px;
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:34px;
+
+    color:#ffb9e9;
+
+    text-shadow:
+        0 0 12px #b20c8b;
+}
+
+/* -------------------------
+   MOBILE
+------------------------- */
+
+@media(max-width:600px){
+
+    .page{
+        padding:20px 12px 50px;
+    }
+
+    .top-label{
+        font-size:34px;
+    }
+
+    .getting{
+        font-size:14px;
+        letter-spacing:2px;
+    }
+
+    .ido{
+        font-size:45px;
+    }
+
+    .stage{
+        height:390px;
+    }
+
+    .couple{
+        transform:translateX(-50%) scale(.8);
+        bottom:45px;
+    }
+
+    @keyframes dance{
+
+        0%,100%{
+            transform:translateX(-50%) scale(.8) rotate(-2deg);
+        }
+
+        50%{
+            transform:translateX(-50%) scale(.8) rotate(3deg) translateY(-6px);
+        }
+    }
+
+    .countdown{
+        gap:6px;
+    }
+
+    .time{
+        padding:14px 3px;
+    }
+
+    .time strong{
+        font-size:27px;
+    }
+
+    .time span{
+        font-size:8px;
+        letter-spacing:1px;
+    }
+
+    .date{
+        font-size:17px;
+        padding:12px 25px;
+    }
+
+}
+
+/* very small phones */
+
+@media(max-width:370px){
+
+    .stage{
+        height:350px;
+    }
+
+    .couple{
+        transform:translateX(-50%) scale(.7);
+        bottom:25px;
+    }
+
+    @keyframes dance{
+
+        0%,100%{
+            transform:translateX(-50%) scale(.7) rotate(-2deg);
+        }
+
+        50%{
+            transform:translateX(-50%) scale(.7) rotate(3deg) translateY(-6px);
+        }
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+
+<div class="background" id="background"></div>
+
+<!-- MUSIC BUTTON -->
+
+<button class="music" onclick="toggleMusic()" id="musicButton">
+    🎵 Play Music
+</button>
+
+<!-- MAIN -->
+
+<main class="page">
+
+    <div class="crown">♕</div>
+
+    <div class="top-label">
+        The Big Day ♡
+    </div>
+
+    <div class="name">
+        Sofiya
+    </div>
+
+    <div class="getting">
+        IS GETTING MARRIED!
+    </div>
+
+    <div class="ido">
+        Until we say “I DO”
+    </div>
+
+
+    <!-- DANCE STAGE -->
+
+    <section class="stage">
+
+        <div class="moon"></div>
+
+        <div class="floor"></div>
+
+
+        <!-- FLOATING HEARTS -->
+
+        <div class="love" style="left:15%;top:25%;animation-delay:.2s;">♥</div>
+
+        <div class="love" style="left:78%;top:20%;animation-delay:1s;">♡</div>
+
+        <div class="love" style="left:20%;top:55%;animation-delay:1.7s;">♥</div>
+
+        <div class="love" style="left:82%;top:52%;animation-delay:.7s;">♡</div>
+
+
+        <!-- COUPLE -->
+
+        <div class="couple">
+
+            <!-- GROOM -->
+
+            <div class="groom">
+
+                <div class="groom-hair"></div>
+
+                <div class="groom-head"></div>
+
+                <div class="groom-body"></div>
+
+                <div class="groom-shirt"></div>
+
+                <div class="tie"></div>
+
+            </div>
+
+
+            <!-- BRIDE -->
+
+            <div class="bride">
+
+                <div class="bride-hair"></div>
+
+                <div class="bride-head"></div>
+
+                <div class="bride-dress"></div>
+
+            </div>
+
+
+            <!-- ARMS -->
+
+            <div class="arm-groom"></div>
+
+            <div class="arm-bride"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- COUNTDOWN -->
+
+    <div class="count-title">
+        ♡ COUNTDOWN TO OUR WEDDING ♡
+    </div>
+
+    <div class="countdown">
+
+        <div class="time">
+            <strong id="days">22</strong>
+            <span>DAYS</span>
+        </div>
+
+        <div class="time">
+            <strong id="hours">00</strong>
+            <span>HOURS</span>
+        </div>
+
+        <div class="time">
+            <strong id="minutes">00</strong>
+            <span>MINUTES</span>
+        </div>
+
+        <div class="time">
+            <strong id="seconds">00</strong>
+            <span>SECONDS</span>
+        </div>
+
+    </div>
+
+
+    <!-- DATE -->
+
+    <div class="date">
+        📅 &nbsp; 17 SEPTEMBER
+    </div>
+
+
+    <!-- LIKE -->
+
+    <section class="like-box">
+
+        <h2>
+            Leave a Like! ❤️
+        </h2>
+
+        <p>
+            Show some love for Sofiya & her big day! 💕
+        </p>
+
+        <button
+            class="like-button"
+            id="likeButton"
+            onclick="giveLike()">
+
+            ❤️
+
+        </button>
+
+        <div class="like-count">
+            <span id="likeCount">0</span> Likes
+        </div>
+
+    </section>
+
+
+    <!-- WISHES -->
+
+    <section class="wishes">
+
+        <h2>
+            Send Your Love & Wishes 💌
+        </h2>
+
+        <textarea
+            id="wishInput"
+            class="wish-input"
+            placeholder="Write a short wish for Sofiya... 💕">
+        </textarea>
+
+        <br>
+
+        <button
+            class="send"
+            onclick="sendWish()">
+
+            Send Wish ✈️
+
+        </button>
+
+        <div
+            class="wish-message"
+            id="wishMessage">
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+        Love, laughter & happily ever after ♡
+    </div>
+
+</main>
+
+
+<script>
+
+/* -------------------------
+   BACKGROUND PARTICLES
+------------------------- */
+
+const background =
+    document.getElementById("background");
+
+for(let i=0;i<45;i++){
+
+    const star =
+        document.createElement("div");
+
+    star.className="star";
+
+    star.style.left =
+        Math.random()*100+"%";
+
+    star.style.top =
+        Math.random()*100+"%";
+
+    star.style.animationDelay =
+        Math.random()*3+"s";
+
+    background.appendChild(star);
+}
+
+
+for(let i=0;i<25;i++){
+
+    const petal =
+        document.createElement("div");
+
+    petal.className="petal";
+
+    petal.innerHTML =
+        Math.random()>.5 ? "♥" : "❤";
+
+    petal.style.left =
+        Math.random()*100+"%";
+
+    petal.style.animationDuration =
+        (6+Math.random()*7)+"s";
+
+    petal.style.animationDelay =
+        Math.random()*8+"s";
+
+    background.appendChild(petal);
+}
+
+
+/* -------------------------
+   LIVE COUNTDOWN
+------------------------- */
+
+const weddingDate =
+    new Date("September 17, 2026 12:00:00").getTime();
+
+
+function updateCountdown(){
+
+    const now =
+        new Date().getTime();
+
+    const difference =
+        weddingDate-now;
+
+
+    if(difference<=0){
+
+        document.getElementById("days").innerText="00";
+        document.getElementById("hours").innerText="00";
+        document.getElementById("minutes").innerText="00";
+        document.getElementById("seconds").innerText="00";
+
+        return;
+    }
+
+
+    const days =
+        Math.floor(
+            difference /
+            (1000*60*60*24)
+        );
+
+
+    const hours =
+        Math.floor(
+            (difference /
+            (1000*60*60))%24
+        );
+
+
+    const minutes =
+        Math.floor(
+            (difference /
+            (1000*60))%60
+        );
+
+
+    const seconds =
+        Math.floor(
+            (difference/1000)%60
+        );
+
+
+    document.getElementById("days").innerText =
+        String(days).padStart(2,"0");
+
+    document.getElementById("hours").innerText =
+        String(hours).padStart(2,"0");
+
+    document.getElementById("minutes").innerText =
+        String(minutes).padStart(2,"0");
+
+    document.getElementById("seconds").innerText =
+        String(seconds).padStart(2,"0");
+
+}
+
+updateCountdown();
+
+setInterval(updateCountdown,1000);
+
+
+/* -------------------------
+   LIKE BUTTON
+------------------------- */
+
+let likes =
+    
