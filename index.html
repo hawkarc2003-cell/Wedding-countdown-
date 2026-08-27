@@ -1,246 +1,1456 @@
- ">✦</div>
-        <div class="star s2">·</div>
-        <div class="star s3">✦</div>
-        <div class="star s4">♡</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#24001f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
 
-        <div class="ground"></div>
+<title>Sofiya | The Big Day</title>
 
-        <div class="couple">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400;500&display=swap');
 
-            <!-- Woman -->
-            <div class="woman">
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-                <div class="woman-head"></div>
+html{
+  scroll-behavior:smooth;
+  -webkit-text-size-adjust:100%;
+}
 
-                <div class="woman-body"></div>
+body{
+  min-height:100vh;
+  overflow-x:hidden;
+  color:#fff;
+  font-family:Poppins,sans-serif;
+  background:
+    radial-gradient(circle at 50% 12%,rgba(158,45,147,.55),transparent 30%),
+    radial-gradient(circle at 15% 75%,rgba(150,0,65,.45),transparent 35%),
+    radial-gradient(circle at 90% 70%,rgba(100,20,150,.4),transparent 35%),
+    linear-gradient(145deg,#160018,#39052f,#18001f);
+  -webkit-font-smoothing:antialiased;
+}
 
-                <div class="woman-dress-line"></div>
+button,
+textarea{
+  font:inherit;
+}
 
-                <div class="woman-arm"></div>
+button{
+  -webkit-tap-highlight-color:transparent;
+}
 
-            </div>
+#particles{
+  position:fixed;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:0;
+}
 
-            <!-- Man -->
-            <div class="man">
+.particle{
+  position:absolute;
+  top:-30px;
+  color:#ff8acb;
+  animation:fall linear infinite;
+  opacity:.7;
+  will-change:transform,opacity;
+}
 
-                <div class="man-hair"></div>
+@keyframes fall{
+  0%{
+    transform:translate3d(0,-30px,0) rotate(0deg);
+    opacity:0;
+  }
 
-                <div class="man-head"></div>
+  15%{
+    opacity:.8;
+  }
 
-                <div class="suit"></div>
+  100%{
+    transform:translate3d(80px,110vh,0) rotate(360deg);
+    opacity:0;
+  }
+}
 
-                <div class="shirt"></div>
+.page{
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:700px;
+  margin:auto;
+  padding:22px 14px 65px;
+  text-align:center;
+}
 
-                <div class="tie"></div>
+.music{
+  position:fixed;
+  top:max(14px,env(safe-area-inset-top));
+  right:12px;
+  z-index:30;
+  border:1px solid rgba(255,180,235,.45);
+  border-radius:30px;
+  padding:9px 14px;
+  color:white;
+  background:rgba(55,0,60,.78);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  font-family:Poppins,sans-serif;
+  font-size:11px;
+  cursor:pointer;
+  box-shadow:0 5px 25px rgba(0,0,0,.25);
+}
 
-                <div class="man-arm"></div>
+.music.playing{
+  box-shadow:
+    0 0 18px rgba(255,80,200,.75),
+    0 0 35px rgba(255,40,170,.25);
+}
 
-            </div>
+.crown{
+  margin-top:22px;
+  font-size:20px;
+}
 
-        </div>
+.title{
+  margin-top:8px;
+  font-family:"Great Vibes",cursive;
+  font-size:34px;
+  color:#ffd5ef;
+}
 
-    </section>
+.name{
+  width:100%;
+  max-width:330px;
+  margin:5px auto 0;
+  font-family:"Great Vibes",cursive;
+  font-size:56px;
+  line-height:1.1;
+  white-space:nowrap;
+  color:#ff75c6;
+  text-shadow:
+    0 0 10px rgba(255,60,180,.5),
+    0 0 28px rgba(255,30,150,.25);
+  animation:nameGlow 3s ease-in-out infinite;
+}
 
-    <div class="section-title">
-        ♡ COUNTDOWN TO THE WEDDING ♡
+@keyframes nameGlow{
+  0%,100%{
+    opacity:.9;
+  }
+
+  50%{
+    opacity:1;
+    text-shadow:
+      0 0 18px rgba(255,80,200,.8),
+      0 0 35px rgba(255,40,160,.4);
+  }
+}
+
+.subtitle{
+  margin-top:7px;
+  font-family:"Playfair Display",serif;
+  font-size:11px;
+  letter-spacing:3px;
+  color:#f9d9ef;
+}
+
+.ido{
+  margin-top:5px;
+  font-family:"Great Vibes",cursive;
+  font-size:37px;
+  color:#ffd0ee;
+}
+
+/* STAGE */
+
+.stage{
+  position:relative;
+  width:100%;
+  height:405px;
+  margin:27px auto 20px;
+  overflow:hidden;
+  border-radius:35px;
+  border:1px solid rgba(255,130,220,.3);
+  background:
+    radial-gradient(circle at 50% 40%,rgba(198,78,190,.18),transparent 42%),
+    linear-gradient(180deg,#401044,#260528 75%,#150016);
+  box-shadow:
+    inset 0 -80px 100px rgba(255,0,100,.12),
+    0 20px 50px rgba(0,0,0,.3);
+}
+
+.moon{
+  position:absolute;
+  right:42px;
+  top:30px;
+  width:72px;
+  height:72px;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 35% 30%,#fff,#eadcff 55%,#b58bd7);
+  box-shadow:
+    0 0 18px #fff,
+    0 0 45px rgba(225,195,255,.65);
+}
+
+.moon:after{
+  content:"";
+  position:absolute;
+  width:66px;
+  height:66px;
+  left:-13px;
+  top:-5px;
+  border-radius:50%;
+  background:#3a0c42;
+}
+
+.spotlight{
+  position:absolute;
+  left:50%;
+  top:40px;
+  width:330px;
+  height:300px;
+  transform:translateX(-50%);
+  border-radius:50%;
+  background:
+    radial-gradient(circle,rgba(255,100,205,.13),transparent 65%);
+}
+
+.floor{
+  position:absolute;
+  left:50%;
+  bottom:32px;
+  width:300px;
+  height:48px;
+  transform:translateX(-50%);
+  border-radius:50%;
+  background:
+    radial-gradient(ellipse,rgba(255,25,125,.42),transparent 68%);
+  filter:blur(4px);
+}
+
+/* COUPLE */
+
+.couple{
+  position:absolute;
+  left:50%;
+  bottom:42px;
+  width:310px;
+  height:320px;
+  transform:translateX(-50%);
+  transform-origin:bottom center;
+  animation:coupleSway 4s ease-in-out infinite;
+  will-change:transform;
+}
+
+@keyframes coupleSway{
+  0%,100%{
+    transform:translateX(-50%) rotate(-1deg);
+  }
+
+  25%{
+    transform:translateX(-50%) translateY(-4px) rotate(1.5deg);
+  }
+
+  50%{
+    transform:translateX(-50%) rotate(-1.5deg);
+  }
+
+  75%{
+    transform:translateX(-50%) translateY(-3px) rotate(1.5deg);
+  }
+}
+
+/* BRIDE */
+
+.bride{
+  position:absolute;
+  right:17px;
+  bottom:0;
+  width:145px;
+  height:300px;
+  transform-origin:bottom center;
+  animation:brideDance 4s ease-in-out infinite;
+  will-change:transform;
+}
+
+@keyframes brideDance{
+  0%,100%{
+    transform:rotate(2deg);
+  }
+
+  50%{
+    transform:translateX(-7px) rotate(-4deg);
+  }
+}
+
+.bride-hair{
+  position:absolute;
+  left:35px;
+  top:15px;
+  width:78px;
+  height:115px;
+  border-radius:50% 50% 43% 43%;
+  background:linear-gradient(100deg,#211018,#43202d,#1b0d14);
+  z-index:2;
+}
+
+.bride-face{
+  position:absolute;
+  left:45px;
+  top:19px;
+  width:61px;
+  height:68px;
+  border-radius:48% 48% 45% 45%;
+  background:linear-gradient(120deg,#e1a07e,#c97b5e);
+  z-index:4;
+}
+
+.bride-fringe{
+  position:absolute;
+  left:42px;
+  top:11px;
+  width:67px;
+  height:35px;
+  border-radius:55% 55% 35% 35%;
+  background:#2a121b;
+  z-index:6;
+}
+
+.veil{
+  position:absolute;
+  left:18px;
+  top:18px;
+  width:125px;
+  height:160px;
+  border:2px solid rgba(255,255,255,.25);
+  border-top:0;
+  border-radius:50%;
+  z-index:7;
+  animation:veilMove 4s ease-in-out infinite;
+}
+
+@keyframes veilMove{
+  0%,100%{
+    transform:translateX(0) rotate(0deg);
+  }
+
+  50%{
+    transform:translateX(5px) rotate(2deg);
+  }
+}
+
+.bride-neck{
+  position:absolute;
+  left:69px;
+  top:78px;
+  width:18px;
+  height:25px;
+  background:#ce8262;
+  z-index:3;
+}
+
+.bride-dress{
+  position:absolute;
+  left:11px;
+  top:88px;
+  width:130px;
+  height:195px;
+  background:linear-gradient(110deg,#6d103d,#d52262 45%,#8e164e);
+  clip-path:polygon(35% 0,65% 0,74% 24%,100% 100%,0 100%,26% 24%);
+  z-index:3;
+  box-shadow:0 0 25px rgba(255,30,130,.25);
+  animation:dressMove 4s ease-in-out infinite;
+  transform-origin:50% 100%;
+}
+
+@keyframes dressMove{
+  0%,100%{
+    transform:rotate(0deg) scaleX(1);
+  }
+
+  50%{
+    transform:rotate(2deg) scaleX(1.02) translateY(-1px);
+  }
+}
+
+.bride-dress:before{
+  content:"";
+  position:absolute;
+  left:48px;
+  top:20px;
+  width:35px;
+  height:155px;
+  background:linear-gradient(180deg,rgba(255,255,255,.18),transparent);
+  transform:rotate(7deg);
+}
+
+.bride-arm{
+  position:absolute;
+  left:15px;
+  top:105px;
+  width:105px;
+  height:13px;
+  border-radius:20px;
+  background:#d38a68;
+  transform-origin:left center;
+  z-index:10;
+  animation:brideArmDance 4s ease-in-out infinite;
+}
+
+@keyframes brideArmDance{
+  0%,100%{
+    transform:rotate(-14deg);
+  }
+
+  50%{
+    transform:rotate(7deg);
+  }
+}
+
+/* GROOM */
+
+.groom{
+  position:absolute;
+  left:10px;
+  bottom:5px;
+  width:145px;
+  height:310px;
+  transform-origin:bottom center;
+  animation:groomDance 4s ease-in-out infinite;
+  will-change:transform;
+}
+
+@keyframes groomDance{
+  0%,100%{
+    transform:rotate(-2deg);
+  }
+
+  50%{
+    transform:translateX(7px) rotate(4deg);
+  }
+}
+
+.groom-hair{
+  position:absolute;
+  left:43px;
+  top:9px;
+  width:72px;
+  height:43px;
+  border-radius:60% 60% 25% 25%;
+  background:linear-gradient(120deg,#120d12,#32202b,#110b10);
+  z-index:7;
+}
+
+.groom-face{
+  position:absolute;
+  left:47px;
+  top:17px;
+  width:63px;
+  height:69px;
+  border-radius:48%;
+  background:linear-gradient(120deg,#c98161,#a96048);
+  z-index:5;
+}
+
+.groom-neck{
+  position:absolute;
+  left:69px;
+  top:76px;
+  width:20px;
+  height:28px;
+  background:#ad674d;
+  z-index:4;
+}
+
+.suit{
+  position:absolute;
+  left:24px;
+  top:91px;
+  width:105px;
+  height:190px;
+  border-radius:20px 20px 8px 8px;
+  background:linear-gradient(90deg,#09070c,#292330,#08070b);
+  z-index:2;
+}
+
+.shirt{
+  position:absolute;
+  left:58px;
+  top:95px;
+  width:38px;
+  height:110px;
+  background:#fff;
+  clip-path:polygon(18% 0,82% 0,100% 100%,0 100%);
+  z-index:4;
+}
+
+.tie{
+  position:absolute;
+  left:70px;
+  top:98px;
+  width:13px;
+  height:64px;
+  background:#c91452;
+  clip-path:polygon(0 0,100% 0,76% 100%,50% 86%,24% 100%);
+  z-index:6;
+}
+
+.groom-arm{
+  position:absolute;
+  left:70px;
+  top:108px;
+  width:112px;
+  height:14px;
+  border-radius:20px;
+  background:#b96f53;
+  transform-origin:left center;
+  z-index:12;
+  animation:groomArmDance 4s ease-in-out infinite;
+}
+
+@keyframes groomArmDance{
+  0%,100%{
+    transform:rotate(13deg);
+  }
+
+  50%{
+    transform:rotate(-5deg);
+  }
+}
+
+.joined-hand{
+  position:absolute;
+  left:174px;
+  top:120px;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:#e1a07e;
+  z-index:15;
+  box-shadow:0 0 10px rgba(255,180,210,.35);
+  animation:handMove 4s ease-in-out infinite;
+}
+
+@keyframes handMove{
+  0%,100%{
+    transform:translateY(0) scale(1);
+  }
+
+  50%{
+    transform:translateY(-5px) scale(1.05);
+  }
+}
+
+/* HEARTS */
+
+.heart{
+  position:absolute;
+  color:#ff5f99;
+  font-size:22px;
+  animation:heartFloat 3s ease-in-out infinite;
+  pointer-events:none;
+}
+
+.heart.one{
+  left:17%;
+  top:38%;
+}
+
+.heart.two{
+  right:16%;
+  top:48%;
+  animation-delay:1s;
+}
+
+.heart.three{
+  left:27%;
+  top:20%;
+  animation-delay:1.8s;
+}
+
+@keyframes heartFloat{
+  0%,100%{
+    opacity:.25;
+    transform:translateY(7px) scale(.8);
+  }
+
+  50%{
+    opacity:1;
+    transform:translateY(-14px) scale(1.1);
+  }
+}
+
+/* COUNTDOWN */
+
+.section-title{
+  margin-top:24px;
+  font-family:"Playfair Display",serif;
+  font-size:13px;
+  letter-spacing:2px;
+}
+
+.countdown{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:7px;
+  margin-top:15px;
+}
+
+.box{
+  padding:14px 3px;
+  border-radius:15px;
+  border:1px solid rgba(255,100,205,.3);
+  background:rgba(70,0,70,.45);
+}
+
+.box strong{
+  display:block;
+  font-family:"Playfair Display",serif;
+  font-size:25px;
+}
+
+.box span{
+  display:block;
+  margin-top:4px;
+  font-size:7px;
+  letter-spacing:1.5px;
+  color:#e4b8d8;
+}
+
+.date{
+  display:inline-block;
+  margin-top:16px;
+  padding:10px 22px;
+  border-radius:30px;
+  border:1px solid rgba(255,120,210,.35);
+  background:rgba(70,0,65,.35);
+  font-family:"Playfair Display",serif;
+  font-size:13px;
+}
+
+/* CARDS */
+
+.card{
+  margin-top:25px;
+  padding:25px 16px;
+  border-radius:24px;
+  border:1px solid rgba(255,110,205,.25);
+  background:rgba(65,0,65,.45);
+  box-shadow:0 15px 40px rgba(0,0,0,.18);
+}
+
+.card h2{
+  font-family:"Great Vibes",cursive;
+  font-size:37px;
+  font-weight:400;
+  color:#ffd0ef;
+}
+
+.card p{
+  margin-top:5px;
+  font-size:11px;
+  color:#dcb9d5;
+}
+
+/* LIKE */
+
+.like{
+  width:70px;
+  height:70px;
+  margin-top:16px;
+  border:0;
+  border-radius:50%;
+  background:linear-gradient(145deg,#ff477d,#a81052);
+  color:white;
+  font-size:30px;
+  cursor:pointer;
+  box-shadow:0 0 25px rgba(255,30,110,.45);
+  transition:transform .2s;
+}
+
+.like:active{
+  transform:scale(.85);
+}
+
+.like-count{
+  margin-top:8px;
+  font-family:"Playfair Display",serif;
+  font-size:17px;
+}
+
+/* WISHES */
+
+textarea{
+  width:100%;
+  height:90px;
+  margin-top:16px;
+  padding:13px;
+  resize:none;
+  border-radius:15px;
+  border:1px solid rgba(255,110,205,.3);
+  outline:none;
+  background:rgba(20,0,28,.7);
+  color:white;
+  font-family:Poppins,sans-serif;
+  font-size:12px;
+}
+
+textarea::placeholder{
+  color:#a987a8;
+}
+
+.send{
+  margin-top:10px;
+  padding:10px 23px;
+  border:0;
+  border-radius:25px;
+  color:white;
+  background:linear-gradient(90deg,#db1b69,#8731c2);
+  cursor:pointer;
+}
+
+.wishes{
+  margin-top:15px;
+}
+
+.wish{
+  margin-top:7px;
+  padding:10px;
+  text-align:left;
+  border-radius:12px;
+  background:rgba(255,255,255,.05);
+  font-size:11px;
+  color:#f2d9ec;
+  overflow-wrap:anywhere;
+}
+
+.footer{
+  margin-top:42px;
+  font-family:"Great Vibes",cursive;
+  font-size:27px;
+  color:#f4c4e5;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+  .page{
+    padding-left:12px;
+    padding-right:12px;
+  }
+
+  .title{
+    font-size:30px;
+  }
+
+  .name{
+    font-size:50px;
+    max-width:300px;
+  }
+
+  .ido{
+    font-size:34px;
+  }
+
+  .stage{
+    height:360px;
+  }
+
+  .couple{
+    animation:coupleSwayMobile 4s ease-in-out infinite;
+  }
+
+  @keyframes coupleSwayMobile{
+
+    0%,100%{
+      transform:translateX(-50%) scale(.86) rotate(-1deg);
+    }
+
+    50%{
+      transform:translateX(-50%) scale(.86) translateY(-4px) rotate(1.5deg);
+    }
+  }
+
+  .moon{
+    width:58px;
+    height:58px;
+    right:25px;
+  }
+
+  .moon:after{
+    width:53px;
+    height:53px;
+  }
+
+  .countdown{
+    gap:5px;
+  }
+
+  .box{
+    padding:12px 2px;
+  }
+
+  .box strong{
+    font-size:22px;
+  }
+
+  .music{
+    font-size:10px;
+    padding:8px 11px;
+  }
+}
+
+@media(max-width:370px){
+
+  .name{
+    font-size:46px;
+    max-width:280px;
+  }
+
+  .title{
+    font-size:28px;
+  }
+
+  .stage{
+    height:340px;
+  }
+
+  .couple{
+    animation:coupleSwaySmall 4s ease-in-out infinite;
+  }
+
+  @keyframes coupleSwaySmall{
+
+    0%,100%{
+      transform:translateX(-50%) scale(.75) rotate(-1deg);
+    }
+
+    50%{
+      transform:translateX(-50%) scale(.75) translateY(-4px) rotate(1.5deg);
+    }
+  }
+}
+
+/* REDUCE MOTION FOR PHONES/USERS THAT REQUEST IT */
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    scroll-behavior:auto !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<!--
+IMPORTANT:
+Keep ReelAudio-51491.mp3 in the SAME GitHub repository
+and in the SAME folder as index.html.
+-->
+<audio id="music" loop preload="metadata">
+  <source src="./ReelAudio-51491.mp3" type="audio/mpeg">
+</audio>
+
+<button
+  class="music"
+  id="musicBtn"
+  type="button"
+  aria-label="Play wedding music">
+  🎵 Play Music
+</button>
+
+<main class="page">
+
+  <div class="crown">♕</div>
+
+  <div class="title">
+    The Big Day ♡
+  </div>
+
+  <div class="name">
+    Sofiya
+  </div>
+
+  <div class="subtitle">
+    IS GETTING MARRIED
+  </div>
+
+  <div class="ido">
+    Until we say “I do”
+  </div>
+
+  <!-- DANCING COUPLE -->
+
+  <section class="stage" aria-label="Animated wedding couple">
+
+    <div class="spotlight"></div>
+
+    <div class="moon"></div>
+
+    <div class="floor"></div>
+
+    <div class="heart one">♡</div>
+    <div class="heart two">♥</div>
+    <div class="heart three">✦</div>
+
+    <div class="couple">
+
+      <!-- BRIDE -->
+
+      <div class="bride">
+
+        <div class="bride-hair"></div>
+        <div class="bride-face"></div>
+        <div class="bride-fringe"></div>
+        <div class="veil"></div>
+        <div class="bride-neck"></div>
+        <div class="bride-dress"></div>
+        <div class="bride-arm"></div>
+
+      </div>
+
+      <!-- GROOM -->
+
+      <div class="groom">
+
+        <div class="groom-hair"></div>
+        <div class="groom-face"></div>
+        <div class="groom-neck"></div>
+        <div class="suit"></div>
+        <div class="shirt"></div>
+        <div class="tie"></div>
+        <div class="groom-arm"></div>
+
+      </div>
+
+      <div class="joined-hand"></div>
+
     </div>
 
-    <div class="countdown">
+  </section>
 
-        <div class="time-box">
-            <strong id="days">00</strong>
-            <span>DAYS</span>
-        </div>
+  <!-- COUNTDOWN -->
 
-        <div class="time-box">
-            <strong id="hours">00</strong>
-            <span>HOURS</span>
-        </div>
+  <div class="section-title">
+    ♡ COUNTDOWN TO THE WEDDING ♡
+  </div>
 
-        <div class="time-box">
-            <strong id="minutes">00</strong>
-            <span>MINUTES</span>
-        </div>
+  <div class="countdown">
 
-        <div class="time-box">
-            <strong id="seconds">00</strong>
-            <span>SECONDS</span>
-        </div>
-
+    <div class="box">
+      <strong id="days">00</strong>
+      <span>DAYS</span>
     </div>
 
-    <div class="date">
-        💍 &nbsp; 17 SEPTEMBER 2026
+    <div class="box">
+      <strong id="hours">00</strong>
+      <span>HOURS</span>
     </div>
 
-    <!-- Likes -->
-
-    <section class="card">
-
-        <h2>Leave a Little Love ❤️</h2>
-
-        <p>
-            Show some love for Sofiya & her big day! 💕
-        </p>
-
-        <button class="like-btn" id="likeBtn">❤️</button>
-
-        <div class="like-count">
-            <span id="likes">0</span> Likes
-        </div>
-
-    </section>
-
-    <!-- Wishes -->
-
-    <section class="card">
-
-        <h2>Send Your Love & Wishes 💌</h2>
-
-        <p>Leave a sweet message for Sofiya</p>
-
-        <textarea id="wishText" placeholder="Hi Sofiya 💛💛"></textarea>
-
-        <button class="send-btn" id="sendWish">
-            Send Wish 💌
-        </button>
-
-        <div class="wishes" id="wishes"></div>
-
-    </section>
-
-    <div class="footer">
-        Love, laughter & happily ever after ♡
+    <div class="box">
+      <strong id="minutes">00</strong>
+      <span>MINUTES</span>
     </div>
+
+    <div class="box">
+      <strong id="seconds">00</strong>
+      <span>SECONDS</span>
+    </div>
+
+  </div>
+
+  <div class="date">
+    💍 17 SEPTEMBER 2026
+  </div>
+
+  <!-- LIKE -->
+
+  <section class="card">
+
+    <h2>
+      Leave a Little Love ❤️
+    </h2>
+
+    <p>
+      Show some love for Sofiya &amp; her big day!
+    </p>
+
+    <button
+      class="like"
+      id="likeBtn"
+      type="button"
+      aria-label="Like the wedding invitation">
+      ❤️
+    </button>
+
+    <div class="like-count">
+      <span id="likes">0</span> Likes
+    </div>
+
+  </section>
+
+  <!-- WISHES -->
+
+  <section class="card">
+
+    <h2>
+      Send Your Love &amp; Wishes 💌
+    </h2>
+
+    <p>
+      Write something sweet for Sofiya.
+    </p>
+
+    <textarea
+      id="wishText"
+      maxlength="500"
+      placeholder="Write your wedding wish here... 💕"
+      aria-label="Wedding wish"></textarea>
+
+    <button
+      class="send"
+      id="sendWish"
+      type="button">
+      Send Wish 💌
+    </button>
+
+    <div
+      class="wishes"
+      id="wishes"
+      aria-live="polite">
+    </div>
+
+  </section>
+
+  <div class="footer">
+    Love, laughter &amp; happily ever after ♡
+  </div>
 
 </main>
 
-
 <script>
 
-/* ---------------------------
-   Falling hearts & sparkles
----------------------------- */
+/* ==========================================
+   FALLING HEARTS & SPARKLES
+========================================== */
 
-const particles = document.getElementById("particles");
+(function(){
 
-const symbols = ["♡","♥","✦","·","✧"];
+  const particleBox =
+    document.getElementById("particles");
 
-for(let i=0;i<45;i++){
+  const symbols =
+    ["♡","♥","✦","✧","·"];
 
-    const p = document.createElement("div");
+  const fragment =
+    document.createDocumentFragment();
 
-    p.className = "particle";
+  for(let i = 0; i < 40; i++){
 
-    p.innerHTML = symbols[Math.floor(Math.random()*symbols.length)];
+    const particle =
+      document.createElement("div");
 
-    p.style.left = Math.random()*100 + "%";
+    particle.className = "particle";
 
-    p.style.fontSize = (8 + Math.random()*13) + "px";
+    particle.textContent =
+      symbols[
+        Math.floor(
+          Math.random() * symbols.length
+        )
+      ];
 
-    p.style.animationDuration = (5 + Math.random()*8) + "s";
+    particle.style.left =
+      Math.random() * 100 + "%";
 
-    p.style.animationDelay = (-Math.random()*10) + "s";
+    particle.style.fontSize =
+      (8 + Math.random() * 13) + "px";
 
-    particles.appendChild(p);
-}
+    particle.style.animationDuration =
+      (6 + Math.random() * 7) + "s";
+
+    particle.style.animationDelay =
+      (-Math.random() * 10) + "s";
+
+    fragment.appendChild(particle);
+  }
+
+  particleBox.appendChild(fragment);
+
+})();
 
 
-/* ---------------------------
-   Countdown
----------------------------- */
+/* ==========================================
+   COUNTDOWN
+========================================== */
 
-const weddingDate = new Date("September 17, 2026 00:00:00").getTime();
+const weddingDate =
+  new Date(
+    "2026-09-17T00:00:00"
+  ).getTime();
 
 function updateCountdown(){
 
-    const now = new Date().getTime();
+  const now =
+    Date.now();
 
-    const difference = weddingDate - now;
+  const difference =
+    weddingDate - now;
 
-    if(difference <= 0){
+  const days =
+    document.getElementById("days");
 
-        document.getElementById("days").textContent = "00";
-        document.getElementById("hours").textContent = "00";
-        document.getElementById("minutes").textContent = "00";
-        document.getElementById("seconds").textContent = "00";
+  const hours =
+    document.getElementById("hours");
 
-        return;
-    }
+  const minutes =
+    document.getElementById("minutes");
 
-    const days = Math.floor(difference/(1000*60*60*24));
+  const seconds =
+    document.getElementById("seconds");
 
-    const hours = Math.floor(
-        (difference%(1000*60*60*24))/(1000*60*60)
-    );
+  if(difference <= 0){
 
-    const minutes = Math.floor(
-        (difference%(1000*60*60))/(1000*60)
-    );
+    days.textContent = "00";
+    hours.textContent = "00";
+    minutes.textContent = "00";
+    seconds.textContent = "00";
 
-    const seconds = Math.floor(
-        (difference%(1000*60))/1000
-    );
+    return;
+  }
 
-    document.getElementById("days").textContent =
-        String(days).padStart(2,"0");
+  const totalSeconds =
+    Math.floor(difference / 1000);
 
-    document.getElementById("hours").textContent =
-        String(hours).padStart(2,"0");
+  const d =
+    Math.floor(totalSeconds / 86400);
 
-    document.getElementById("minutes").textContent =
-        String(minutes).padStart(2,"0");
+  const h =
+    Math.floor((totalSeconds % 86400) / 3600);
 
-    document.getElementById("seconds").textContent =
-        String(seconds).padStart(2,"0");
+  const m =
+    Math.floor((totalSeconds % 3600) / 60);
+
+  const s =
+    totalSeconds % 60;
+
+  days.textContent =
+    String(d).padStart(2,"0");
+
+  hours.textContent =
+    String(h).padStart(2,"0");
+
+  minutes.textContent =
+    String(m).padStart(2,"0");
+
+  seconds.textContent =
+    String(s).padStart(2,"0");
 }
 
 updateCountdown();
 
-setInterval(updateCountdown,1000);
+setInterval(
+  updateCountdown,
+  1000
+);
 
 
-/* ---------------------------
-   Music
----------------------------- */
+/* ==========================================
+   MUSIC
+========================================== */
 
-const music = document.getElementById("music");
-const musicBtn = document.getElementById("musicBtn");
+const music =
+  document.getElementById("music");
 
-musicBtn.addEventListener("click",()=>{
+const musicBtn =
+  document.getElementById("musicBtn");
+
+musicBtn.addEventListener(
+  "click",
+  async function(){
 
     if(music.paused){
 
-        music.play();
+      try{
 
-        musicBtn.innerHTML = "🎵 Pause Music";
+        await music.play();
+
+        musicBtn.textContent =
+          "⏸ Pause Music";
+
+        musicBtn.classList.add(
+          "playing"
+        );
+
+      }catch(error){
+
+        musicBtn.textContent =
+          "🎵 Tap Again";
+
+      }
 
     }else{
 
-        music.pause();
+      music.pause();
 
-        musicBtn.innerHTML = "🎵 Play Music";
+      musicBtn.textContent =
+        "🎵 Play Music";
+
+      musicBtn.classList.remove(
+        "playing"
+      );
+
     }
 
-});
+  }
+);
 
 
-/* ---------------------------
-   Likes
----------------------------- */
+/* ==========================================
+   LIKES
+========================================== */
 
-let likes = Number(localStorage.getItem("sofiyaLikes") || 0);
+let likes = 0;
 
-document.getElementById("likes").textContent = likes;
+try{
 
-document.getElementById("likeBtn").addEventListener("click",()=>{
+  likes =
+    Number(
+      localStorage.getItem(
+        "sofiyaLikes"
+      )
+    ) || 0;
+
+}catch(error){
+
+  likes = 0;
+
+}
+
+const likesDisplay =
+  document.getElementById("likes");
+
+const likeButton =
+  document.getElementById("likeBtn");
+
+likesDisplay.textContent =
+  likes;
+
+likeButton.addEventListener(
+  "click",
+  function(){
 
     likes++;
 
-    localStorage.setItem("sofiyaLikes",likes);
+    try{
 
-    document.getElementById("likes").textContent = likes;
+      localStorage.setItem(
+        "sofiyaLikes",
+        String(likes)
+      );
 
-});
+    }catch(error){
 
->
+      /* Continue even if storage is blocked */
+
+    }
+
+    likesDisplay.textContent =
+      likes;
+
+    this.animate(
+      [
+        {
+          transform:"scale(1)"
+        },
+        {
+          transform:"scale(1.25)"
+        },
+        {
+          transform:"scale(1)"
+        }
+      ],
+      {
+        duration:350
+      }
+    );
+
+  }
+);
+
+
+/* ==========================================
+   WISHES
+========================================== */
+
+const wishText =
+  document.getElementById("wishText");
+
+const wishes =
+  document.getElementById("wishes");
+
+const sendWish =
+  document.getElementById("sendWish");
+
+let savedWishes = [];
+
+try{
+
+  savedWishes =
+    JSON.parse(
+      localStorage.getItem(
+        "sofiyaWishes"
+      ) || "[]"
+    );
+
+  if(!Array.isArray(savedWishes)){
+    savedWishes = [];
+  }
+
+}catch(error){
+
+  savedWishes = [];
+
+}
+
+
+function showWishes(){
+
+  wishes.innerHTML = "";
+
+  savedWishes.forEach(
+    function(text){
+
+      const wish =
+        document.createElement("div");
+
+      wish.className = "wish";
+
+      /*
+        textContent is intentionally used
+        so visitor messages cannot inject HTML.
+      */
+      wish.textContent =
+        "💌 " + text;
+
+      wishes.appendChild(wish);
+
+    }
+  );
+
+}
+
+
+showWishes();
+
+
+function submitWish(){
+
+  const text =
+    wishText.value.trim();
+
+  if(!text){
+
+    alert(
+      "Write a little wish first 💕"
+    );
+
+    wishText.focus();
+
+    return;
+  }
+
+  savedWishes.push(text);
+
+  /*
+    Keep browser storage from growing forever.
+  */
+  if(savedWishes.length > 100){
+    savedWishes =
+      savedWishes.slice(-100);
+  }
+
+  try{
+
+    localStorage.setItem(
+      "sofiyaWishes",
+      JSON.stringify(savedWishes)
+    );
+
+  }catch(error){
+
+    /* The wish can still appear on this page. */
+
+  }
+
+  wishText.value = "";
+
+  showWishes();
+
+}
+
+
+sendWish.addEventListener(
+  "click",
+  submitWish
+);
+
+
+/*
+  Allow Ctrl+Enter / Cmd+Enter
+  to send a wish.
+*/
+wishText.addEventListener(
+  "keydown",
+  function(event){
+
+    if(
+      (event.ctrlKey || event.metaKey) &&
+      event.key === "Enter"
+    ){
+
+      event.preventDefault();
+
+      submitWish();
+
+    }
+
+  }
+);
+
+
+/* ==========================================
+   PAGE LOAD SAFETY
+========================================== */
+
+window.addEventListener(
+  "error",
+  function(event){
+
+    console.log(
+      "Invitation page error:",
+      event.message
+    );
+
+  }
+);
+
+</script>
+
+</body>
+</html>
